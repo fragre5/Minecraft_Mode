@@ -1,0 +1,27 @@
+modLoader="javafml" #mandatory
+loaderVersion="[41,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="All rights reserved"
+[[mods]]
+modId="testmod"
+version="${file.jarVersion}-1.19"
+
+displayName="Test Mod"
+
+logoFile="examplemod.png"
+credits="Thanks for this example mod goes to Java"
+authors="Michael Zozulya aka Fragre"
+
+description="This my test mod for Minecraft"
+
+[[dependencies.testmod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[41,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.testmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,1.20)"
+    ordering="NONE"
+    side="BOTH"
