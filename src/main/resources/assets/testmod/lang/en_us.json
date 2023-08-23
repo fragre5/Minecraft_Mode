@@ -1,3 +1,6 @@
 {
-  "item.testmod.zircon" : "Zircon"
+  "item.testmod.zircon" : "Zircon",
+
+  "block.testmod.zircon_block": "Block of Zircon",
+  "block.testmod.zircon_ore": "Zircon Ore"
 }

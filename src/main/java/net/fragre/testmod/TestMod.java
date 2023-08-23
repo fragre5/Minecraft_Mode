@@ -1,6 +1,7 @@
 package net.fragre.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.fragre.testmod.block.ModBlocks;
 import net.fragre.testmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +21,7 @@ public class TestMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
