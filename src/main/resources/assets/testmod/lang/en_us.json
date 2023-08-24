@@ -4,5 +4,6 @@
   "item.testmod.eight_ball": "Lucky Ball",
 
   "block.testmod.zircon_block": "Block of Zircon",
-  "block.testmod.zircon_ore": "Zircon Ore"
+  "block.testmod.zircon_ore": "Zircon Ore",
+  "block.testmod.jumpy_block": "Jumpy Block"
 }

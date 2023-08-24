@@ -1,6 +1,7 @@
 package net.fragre.testmod.block;
 
 import net.fragre.testmod.TestMod;
+import net.fragre.testmod.block.custom.JumpyBlock;
 import net.fragre.testmod.item.ModCreativeModeTab;
 import net.fragre.testmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -30,6 +31,10 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.TEST_TAB);
+
+    public static final RegistryObject<Block> JUMPY_BLOCK = registryBlock("jumpy_block",
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TEST_TAB);
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab) {
 
