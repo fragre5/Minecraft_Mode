@@ -1,6 +1,7 @@
 package net.fragre.testmod.block;
 
 import net.fragre.testmod.TestMod;
+import net.fragre.testmod.block.custom.BlueberryCropBlock;
 import net.fragre.testmod.block.custom.JumpyBlock;
 import net.fragre.testmod.block.custom.ZircomLampBlock;
 import net.fragre.testmod.item.ModCreativeModeTab;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -41,6 +43,9 @@ public class ModBlocks {
             () -> new ZircomLampBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(ZircomLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TEST_TAB);
+
+    public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
+            () -> new BlueberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab) {
 
