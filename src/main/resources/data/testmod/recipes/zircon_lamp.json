@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "testmod:zircon"
+    },
+    "*": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "#*#",
+    "***",
+    "#*#"
+  ],
+  "result": {
+    "item": "testmod:zircon_lamp"
+  }
+}

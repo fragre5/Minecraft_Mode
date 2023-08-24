@@ -2,6 +2,7 @@ package net.fragre.testmod.block;
 
 import net.fragre.testmod.TestMod;
 import net.fragre.testmod.block.custom.JumpyBlock;
+import net.fragre.testmod.block.custom.ZircomLampBlock;
 import net.fragre.testmod.item.ModCreativeModeTab;
 import net.fragre.testmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -35,6 +36,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUMPY_BLOCK = registryBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TEST_TAB);
+
+    public static final RegistryObject<Block> ZIRCON_LAMP = registryBlock("zircon_lamp",
+            () -> new ZircomLampBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(ZircomLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TEST_TAB);
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab) {
 

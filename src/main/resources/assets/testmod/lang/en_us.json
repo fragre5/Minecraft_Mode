@@ -5,5 +5,6 @@
 
   "block.testmod.zircon_block": "Block of Zircon",
   "block.testmod.zircon_ore": "Zircon Ore",
-  "block.testmod.jumpy_block": "Jumpy Block"
+  "block.testmod.jumpy_block": "Jumpy Block",
+  "block.testmod.zircon_lamp": "Zircon Lamp"
 }
