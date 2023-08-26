@@ -3,6 +3,7 @@ package net.fragre.testmod;
 import com.mojang.logging.LogUtils;
 import net.fragre.testmod.block.ModBlocks;
 import net.fragre.testmod.item.ModItems;
+import net.fragre.testmod.painting.ModPaintings;
 import net.fragre.testmod.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +25,7 @@ public class TestMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
