@@ -5,6 +5,8 @@ import net.fragre.testmod.block.ModBlocks;
 import net.fragre.testmod.item.ModItems;
 import net.fragre.testmod.painting.ModPaintings;
 import net.fragre.testmod.villager.ModVillagers;
+import net.fragre.testmod.world.feature.ModConfiguredFeatures;
+import net.fragre.testmod.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,6 +28,8 @@ public class TestMod {
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
