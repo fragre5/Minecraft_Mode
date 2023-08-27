@@ -11,5 +11,8 @@
   "block.testmod.zircon_lamp": "Zircon Lamp",
   "block.testmod.blueberry_crop": "Blueberry Crop",
 
-  "entity.minecraft.villager.testmod.jumpy_master": "Jumpy Master"
+  "entity.minecraft.villager.testmod.jumpy_master": "Jumpy Master",
+
+  "key.category.testmod.test": "Test Mod",
+  "key.testmod.drink_water": "Drink Water"
 }
