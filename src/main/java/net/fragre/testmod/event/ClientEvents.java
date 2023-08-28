@@ -1,11 +1,13 @@
 package net.fragre.testmod.event;
 
 import net.fragre.testmod.TestMod;
+import net.fragre.testmod.client.ThirstHudOverlay;
 import net.fragre.testmod.networking.ModMessages;
 import net.fragre.testmod.networking.packet.DrinkWaterC2SPacket;
 import net.fragre.testmod.util.KeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,6 +28,11 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(KeyBinding.DRINKING_KEY);
+        }
+
+        @SubscribeEvent
+        public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+            event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
         }
     }
 }
