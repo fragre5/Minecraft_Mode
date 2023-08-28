@@ -1,5 +1,6 @@
 package net.fragre.testmod.networking.packet;
 
+import net.fragre.testmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -44,9 +45,18 @@ public class DrinkWaterC2SPacket {
                 level.playSound(null, player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS,
                         0.5f, level.random.nextFloat() * 0.1f + 0.9f);
 
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
+                    thirst.addThirst(1);
+                    player.sendSystemMessage(Component.literal("Current thirst is: " + thirst.getThirst())
+                            .withStyle(ChatFormatting.AQUA));
+
+                });
 
             } else {
                 player.sendSystemMessage(Component.translatable(MESSAGE_NO_WATER).withStyle(ChatFormatting.RED));
+
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> player.sendSystemMessage(Component.literal("Current thirst is: " + thirst.getThirst())
+                        .withStyle(ChatFormatting.AQUA)));
 
             }
         });
