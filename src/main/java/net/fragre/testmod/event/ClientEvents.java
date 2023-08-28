@@ -1,9 +1,9 @@
 package net.fragre.testmod.event;
 
 import net.fragre.testmod.TestMod;
+import net.fragre.testmod.networking.ModMessages;
+import net.fragre.testmod.networking.packet.DrinkWaterC2SPacket;
 import net.fragre.testmod.util.KeyBinding;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -16,7 +16,7 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
             if (KeyBinding.DRINKING_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed a key!"));
+                ModMessages.sendToServer(new DrinkWaterC2SPacket());
             }
         }
     }

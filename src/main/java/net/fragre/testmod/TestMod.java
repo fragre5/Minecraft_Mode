@@ -3,6 +3,7 @@ package net.fragre.testmod;
 import com.mojang.logging.LogUtils;
 import net.fragre.testmod.block.ModBlocks;
 import net.fragre.testmod.item.ModItems;
+import net.fragre.testmod.networking.ModMessages;
 import net.fragre.testmod.painting.ModPaintings;
 import net.fragre.testmod.villager.ModVillagers;
 import net.fragre.testmod.world.feature.ModConfiguredFeatures;
@@ -38,6 +39,8 @@ public class TestMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(ModVillagers::registerPOIs);
+
+        ModMessages.register();
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)

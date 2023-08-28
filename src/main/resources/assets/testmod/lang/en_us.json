@@ -14,5 +14,8 @@
   "entity.minecraft.villager.testmod.jumpy_master": "Jumpy Master",
 
   "key.category.testmod.test": "Test Mod",
-  "key.testmod.drink_water": "Drink Water"
+  "key.testmod.drink_water": "Drink Water",
+
+  "message.testmod.drink_water": "Drinking Water",
+  "message.testmod.no_water": "No water nearby!"
 }
