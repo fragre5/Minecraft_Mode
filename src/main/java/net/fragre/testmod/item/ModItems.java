@@ -2,10 +2,13 @@ package net.fragre.testmod.item;
 
 import net.fragre.testmod.TestMod;
 import net.fragre.testmod.block.ModBlocks;
+import net.fragre.testmod.fluid.ModFluids;
 import net.fragre.testmod.item.custom.EightBallItem;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -33,6 +36,9 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TEST_TAB)
                     .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
 
+    public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER,
+                    new Item.Properties().tab(ModCreativeModeTab.TEST_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

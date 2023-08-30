@@ -2,12 +2,16 @@ package net.fragre.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.fragre.testmod.block.ModBlocks;
+import net.fragre.testmod.fluid.ModFluidTypes;
+import net.fragre.testmod.fluid.ModFluids;
 import net.fragre.testmod.item.ModItems;
 import net.fragre.testmod.networking.ModMessages;
 import net.fragre.testmod.painting.ModPaintings;
 import net.fragre.testmod.villager.ModVillagers;
 import net.fragre.testmod.world.feature.ModConfiguredFeatures;
 import net.fragre.testmod.world.feature.ModPlacedFeatures;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,6 +36,9 @@ public class TestMod {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -47,6 +54,8 @@ public class TestMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
         }
     }
 }
