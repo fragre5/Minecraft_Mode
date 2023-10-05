@@ -2,6 +2,7 @@ package net.fragre.testmod.block;
 
 import net.fragre.testmod.TestMod;
 import net.fragre.testmod.block.custom.BlueberryCropBlock;
+import net.fragre.testmod.block.custom.DistillerBlock;
 import net.fragre.testmod.block.custom.JumpyBlock;
 import net.fragre.testmod.block.custom.ZircomLampBlock;
 import net.fragre.testmod.fluid.ModFluids;
@@ -51,6 +52,10 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<Block> DISTILLER = registryBlock("distiller",
+            () -> new DistillerBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TEST_TAB);
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab) {
 
